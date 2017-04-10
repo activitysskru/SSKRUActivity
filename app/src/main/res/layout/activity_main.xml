@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context="com.example.pongs_000.sskruactivity.MainActivity">
-
 
     <LinearLayout
         android:id="@+id/email_login_form"
@@ -15,25 +13,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <AutoCompleteTextView
-                android:id="@+id/email"
+            <EditText
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="อีเมลล์"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:singleLine="true" />
-
+                android:singleLine="true"
+                android:hint="รหัสนักศึกษา" />
         </android.support.design.widget.TextInputLayout>
 
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -42,24 +37,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="รหัสผ่าน"
-                android:imeActionId="@+id/login"
-                android:imeActionLabel="Sign in"
-                android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
-                android:maxLines="1"
                 android:singleLine="true" />
 
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/email_sign_in_button"
+            android:id="@+id/login_button"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="เข้าสู่ระบบ"
             android:textStyle="bold" />
-
 
         </LinearLayout>
 
