@@ -2,4 +2,8 @@
     <string name="app_name">SSKRUActivity</string>
     <string name="err_msg_name">โปรดกรอก รหัสนักศึกษา</string>
     <string name="err_msg_password">โปรดกรอก รหัสผ่าน</string>
+    <string name="Profile_name">ชื่อ-สกุล</string>
+    <string name="Profile_student_ID">รหัสนักศึกษา</string>
+    <string name="Profile_Branch">สาขาวิชา</string>
+    <string name="Profile_faculty">คณะ</string>
 </resources>
