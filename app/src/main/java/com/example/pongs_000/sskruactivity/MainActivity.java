@@ -1,5 +1,10 @@
 package com.example.pongs_000.sskruactivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,39 +16,68 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    private EditText inputUsername, inputPassword;
+    private EditText user, pass;
     private TextInputLayout inputLayoutUsername, inputLayoutPassword;
     private Button btnLogin;
 
-
+    private static String TAG = "MyService";
+    private static String Server = new Server().name();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if( getIntent().getBooleanExtra("Exit me", false)){
+            return;
+        }
 
-        inputLayoutUsername = (TextInputLayout) findViewById(R.id.input_layout_username);
-        inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
-        inputUsername = (EditText) findViewById(R.id.username);
-        inputPassword = (EditText) findViewById(R.id.password);
+        final DB myDb = new DB(this);
+        myDb.getWritableDatabase(); // First method
 
-        btnLogin = (Button) findViewById(R.id.login_button);
+        List<DB.sMembers> MebmerList = myDb.ReadLogin();
+        if(MebmerList != null)
+        {
+            for (DB.sMembers mem : MebmerList) {
 
-        inputUsername.addTextChangedListener(new MyTextWatcher(inputUsername));
-        inputPassword.addTextChangedListener(new MyTextWatcher(inputPassword));
+                inputLayoutUsername = (TextInputLayout) findViewById(R.id.input_layout_username);
+                inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
+                EditText user = (EditText) findViewById(R.id.username);
+                EditText pass = (EditText) findViewById(R.id.password);
+                user.setText(mem.gUser());
+                pass.setText(mem.gPass());
+                new onLoad().execute(Server + "login.json.php?user=" + user.getText().toString() + "&pass=" + pass.getText().toString());
+            }
+        }
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                submitForm();
+        Button button = (Button)findViewById(R.id.login_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText user = (EditText) findViewById(R.id.username);
+                EditText pass = (EditText) findViewById(R.id.password);
+
+                user.addTextChangedListener(new MyTextWatcher(user));
+                pass.addTextChangedListener(new MyTextWatcher(pass));
+                myDb.DeleteLogin();
+                myDb.WriteLogin(user.getText().toString(), pass.getText().toString());
+
+                new onLoad().execute(Server + "login.json.php?user=" + user.getText().toString() + "&pass=" + pass.getText().toString());
             }
         });
-
-
-
     }
 
     private void submitForm() {
@@ -60,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean validateUsername() {
-        if (inputUsername.getText().toString().trim().isEmpty()) {
+        if (user.getText().toString().trim().isEmpty()) {
             inputLayoutUsername.setError(getString(R.string.err_msg_name));
-            requestFocus(inputUsername);
+            requestFocus(user);
             return false;
         } else {
             inputLayoutUsername.setErrorEnabled(false);
@@ -72,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validatePassword() {
-        if (inputPassword.getText().toString().trim().isEmpty()) {
+        if (pass.getText().toString().trim().isEmpty()) {
             inputLayoutPassword.setError(getString(R.string.err_msg_password));
-            requestFocus(inputPassword);
+            requestFocus(pass);
             return false;
         } else {
             inputLayoutPassword.setErrorEnabled(false);
@@ -113,6 +147,126 @@ public class MainActivity extends AppCompatActivity {
                     validatePassword();
                     break;
             }
+        }
+    }
+
+    private class onLoad extends AsyncTask<String,Void,Void>
+    {
+        private ProgressDialog pd;
+        boolean con = false;
+        String id = null;
+        private String message;
+
+        @Override
+        protected void onPreExecute()
+        {
+            pd = new ProgressDialog(MainActivity.this);
+            pd.setTitle("กำลังทำงาน");
+            pd.setMessage("โหลดข้อมูล...");
+            pd.show();
+        }
+
+        @Override
+        protected Void doInBackground(String... params)
+        {
+            String jString;
+            try {
+                jString = getJsonFromUrl(params[0]);
+
+                if (jString != null) {
+
+                    JSONArray jArray = new JSONArray(jString);
+                    for (int i=0; i < jArray.length() ; i++ ) {
+                        JSONObject jObj = jArray.getJSONObject(i);
+                        id = jObj.getString("user_id");
+                    }// for
+                    con = true;
+                }// if
+
+            } catch (IOException e) {
+                //MessageBox("การเชื่อมต่อผิดพลาด");
+                message = e.toString();
+            } catch (JSONException e) {
+                //MessageBox("การรับส่งผิดพลาด");
+                message = e.toString();
+            }catch (Exception e) {
+                //Log.d(TAG, "Problem reading " +  ex.getLocalizedMessage());
+                //MessageBox("การเชื่อมต่อผิดพลาด");
+                message = e.toString();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void v)
+        {
+            pd.dismiss();
+            if(con!=false && id!=null)
+            {
+                Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivityForResult(i,1);
+            }
+            else {
+                MessageBox("รหัสผ่านผิด");
+                //MessageBox(message);
+            }
+        }
+    }
+
+    private String getJsonFromUrl(String strUrl) throws IOException {
+
+        URL url = new URL(strUrl);
+        try {
+            HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+            httpCon.setRequestMethod("GET");
+            httpCon.setConnectTimeout(6*1000);
+            httpCon.connect();
+
+            int responseCode = httpCon.getResponseCode();
+            //Log.d(TAG, "The response is: " + responseCode);
+
+            if (responseCode == HttpURLConnection.HTTP_OK){
+                //Log.d(TAG, " size: " + httpCon.getContentLength());
+
+                InputStream ins = httpCon.getInputStream();
+                BufferedReader rd = new BufferedReader(
+                        new InputStreamReader(ins,"UTF-8"));
+                String line;
+                StringBuilder response = new StringBuilder();
+                while ((line = rd.readLine()) != null) {
+                    response.append(line);
+                    response.append("\n");
+                    //Log.d(TAG, line);
+                }
+                rd.close();
+                return response.toString();
+            }
+
+        } catch (Exception ex) {
+            //Log.d(TAG, "Problem reading " +  ex.getLocalizedMessage());
+            //ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public void MessageBox(String str) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle(str);
+
+        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        alert.show();
+    }
+
+    protected void onActivityResult ( int requestCode, int resultCode, Intent intent )
+    {
+        super.onActivityResult ( requestCode, resultCode, intent );
+        if ( requestCode == 1)
+        {
+            finish();
         }
     }
 }
