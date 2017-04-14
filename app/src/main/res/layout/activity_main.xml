@@ -8,55 +8,69 @@
     tools:context="com.example.pongs_000.sskruactivity.MainActivity">
 
     <LinearLayout
-        android:id="@+id/email_login_form"
         android:layout_width="336dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="463dp"
+        android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="8dp">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_username"
+        <LinearLayout
+            android:id="@+id/login_form"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp">
 
-            <EditText
-                android:id="@+id/username"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_user_24dp"
+                    android:drawablePadding="16dp"
+                    android:hint="รหัสนักศึกษา"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_lock_outline_24dp"
+                    android:drawablePadding="16dp"
+                    android:hint="รหัสผ่าน"
+                    android:inputType="numberPassword"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/login_button"
+                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="รหัสนักศึกษา"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:layout_marginTop="16dp"
+                android:text="เข้าสู่ระบบ"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="รหัสผ่าน"
-                android:inputType="textPassword"
-                android:singleLine="true" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/login_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="เข้าสู่ระบบ"
-            android:textStyle="bold" />
-
+        </LinearLayout>
     </LinearLayout>
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>
