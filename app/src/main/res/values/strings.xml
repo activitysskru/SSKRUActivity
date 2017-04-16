@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SSKRUActivity</string>
+    <string name="app_name">ระบบเช็คกิจกรรม</string>
     <string name="err_msg_name">โปรดกรอก รหัสนักศึกษา</string>
     <string name="err_msg_password">โปรดกรอก รหัสผ่าน</string>
     <string name="Profile_name">ชื่อ-สกุล</string>
