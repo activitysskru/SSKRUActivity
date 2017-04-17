@@ -28,7 +28,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private EditText user, pass;
     private TextInputLayout inputLayoutUsername, inputLayoutPassword;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         if( getIntent().getBooleanExtra("Exit me", false)){
             return;
         }
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute()
         {
-            pd = new ProgressDialog(MainActivity.this);
+            pd = new ProgressDialog(Login.this);
             pd.setTitle("กำลังทำงาน");
             pd.setMessage("โหลดข้อมูล...");
             pd.show();
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             pd.dismiss();
             if(con!=false && id!=null)
             {
-                Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+                Intent i = new Intent(Login.this, ProfileActivity.class);
                 startActivityForResult(i,1);
             }
             else {
