@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
                 EditText user = (EditText) findViewById(R.id.username);
                 EditText pass = (EditText) findViewById(R.id.password);
+
+
+
                 user.setText(mem.gUser());
                 pass.setText(mem.gPass());
                 new onLoad().execute(Server + "login.json.php?user=" + user.getText().toString() + "&pass=" + pass.getText().toString());
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button)findViewById(R.id.login_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+//                submitForm();
+
                 EditText user = (EditText) findViewById(R.id.username);
                 EditText pass = (EditText) findViewById(R.id.password);
 
@@ -78,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 new onLoad().execute(Server + "login.json.php?user=" + user.getText().toString() + "&pass=" + pass.getText().toString());
             }
         });
+
+//        submitForm();
     }
 
     private void submitForm() {
@@ -88,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
         if (!validatePassword()) {
             return;
         }
-
-        Toast.makeText(getApplicationContext(), "Thank You!", Toast.LENGTH_SHORT).show();
     }
 
 
