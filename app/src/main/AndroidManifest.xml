@@ -24,9 +24,23 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
         </activity>
 
+        <activity android:name=".News"
+            android:label="@string/news">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
+        </activity>
+
+        <activity android:name=".Calendar"
+            android:label="@string/calendar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
+        </activity>
+
+        <activity android:name=".ProfileActivity"
+            android:label="@string/profile">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
+        </activity>
+
         <activity android:name=".About"
-            android:label="@string/about"
-            android:screenOrientation="portrait">
+            android:label="@string/about">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
         </activity>
 

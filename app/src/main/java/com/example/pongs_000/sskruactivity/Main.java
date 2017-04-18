@@ -18,6 +18,37 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+
+        Button tonews = (Button)findViewById(R.id.button5);
+        tonews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, News.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button tocalendar = (Button)findViewById(R.id.button);
+        tocalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, Calendar.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button toprofile = (Button)findViewById(R.id.button6);
+        toprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main.this, ProfileActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         Button toabout = (Button)findViewById(R.id.button2);
         toabout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,5 +58,6 @@ public class Main extends AppCompatActivity {
 
             }
         });
+
     }
 }

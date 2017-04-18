@@ -36,7 +36,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="ข่าวประชาสัมพันธ์"
+                android:text="@string/news"
                 android:layout_below="@+id/button5"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="ปฏิทินกิจกรรม"
+                android:text="@string/calendar"
                 android:gravity="center"
                 android:paddingTop="5dp"
                 android:layout_below="@+id/button"
@@ -82,7 +82,7 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="กิจกรรมที่เข้าร่วม"
+                android:text="@string/profile"
                 android:gravity="center"
                 android:paddingTop="5dp"
                 android:layout_below="@+id/button2"
@@ -102,7 +102,7 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="เกี่ยวกับ"
+                android:text="@string/about"
                 android:gravity="center"
                 android:paddingTop="5dp"
                 android:layout_below="@+id/button2"
