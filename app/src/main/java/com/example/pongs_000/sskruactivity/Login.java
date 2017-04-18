@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -65,6 +66,17 @@ public class Login extends AppCompatActivity {
                 new onLoad().execute(Server + "login.json.php?user=" + user.getText().toString() + "&pass=" + pass.getText().toString());
             }
         }
+
+
+        TextView testtomain = (TextView)findViewById(R.id.mainpagetest);
+        testtomain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, Main.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         Button button = (Button)findViewById(R.id.login_button);
