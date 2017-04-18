@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -19,7 +20,7 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.main);
 
 
-        Button tonews = (Button)findViewById(R.id.button5);
+        ImageView tonews = (ImageView) findViewById(R.id.button5);
         tonews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +30,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        Button tocalendar = (Button)findViewById(R.id.button);
+        ImageView tocalendar = (ImageView)findViewById(R.id.button);
         tocalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +40,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        Button toprofile = (Button)findViewById(R.id.button6);
+        ImageView toprofile = (ImageView)findViewById(R.id.button6);
         toprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        Button toabout = (Button)findViewById(R.id.button2);
+        ImageView toabout = (ImageView)findViewById(R.id.button2);
         toabout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
