@@ -74,15 +74,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/mainpagetest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:text="NO LOGIN Test"
-                android:textStyle="bold"
-                android:gravity="center"/>
-
         </LinearLayout>
     </LinearLayout>
 

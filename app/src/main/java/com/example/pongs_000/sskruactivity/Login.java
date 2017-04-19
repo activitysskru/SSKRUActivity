@@ -68,17 +68,6 @@ public class Login extends AppCompatActivity {
         }
 
 
-        TextView testtomain = (TextView)findViewById(R.id.mainpagetest);
-        testtomain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Main.class);
-                startActivity(intent);
-
-            }
-        });
-
-
         Button button = (Button)findViewById(R.id.login_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -221,12 +210,15 @@ public class Login extends AppCompatActivity {
             pd.dismiss();
             if(con!=false && id!=null)
             {
-                Intent i = new Intent(Login.this, ProfileActivity.class);
-                startActivityForResult(i,1);
+                Intent i = new Intent(Login.this, Main.class);
+                startActivity(i);
+            }
+            else if (con == false){
+                MessageBox("การเชื่อมต่อผิดพลาด");
+                //MessageBox(message);
             }
             else {
                 MessageBox("รหัสผ่านผิด");
-                //MessageBox(message);
             }
         }
     }
