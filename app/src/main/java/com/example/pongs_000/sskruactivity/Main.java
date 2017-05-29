@@ -1,7 +1,9 @@
 package com.example.pongs_000.sskruactivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -60,5 +62,29 @@ public class Main extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void onBackPressed() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("ออกจากแอป...");
+        dialog.setIcon(R.mipmap.ic_launcher);
+        dialog.setCancelable(true);
+        dialog.setMessage("ต้องการออกจากแอปพลิเคชัน หรือไม่  ?");
+        dialog.setPositiveButton("ใช่", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setAction(Intent.ACTION_MAIN);
+                startActivity(intent);
+            }
+        });
+
+        dialog.setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
     }
 }

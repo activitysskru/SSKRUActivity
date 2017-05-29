@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -212,6 +213,9 @@ public class Login extends AppCompatActivity {
             {
                 Intent i = new Intent(Login.this, Main.class);
                 startActivity(i);
+                // Toast toast = Toast.makeText(Login.this,"ยินดีต้อนรับคุณ"+id, Toast.LENGTH_SHORT);
+                // toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 210);
+                // toast.show();
             }
             else if (con == false){
                 MessageBox("การเชื่อมต่อผิดพลาด");
@@ -278,5 +282,28 @@ public class Login extends AppCompatActivity {
         {
             finish();
         }
+    }
+    public void onBackPressed() {
+        android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
+        dialog.setTitle("ออกจากแอป...");
+        dialog.setIcon(R.mipmap.ic_launcher);
+        dialog.setCancelable(true);
+        dialog.setMessage("ต้องการออกจากแอปพลิเคชัน หรือไม่  ?");
+        dialog.setPositiveButton("ใช่", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent();
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setAction(Intent.ACTION_MAIN);
+                startActivity(intent);
+            }
+        });
+
+        dialog.setNegativeButton("ไม่ใช่", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
     }
 }

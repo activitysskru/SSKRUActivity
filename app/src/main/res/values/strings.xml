@@ -1,20 +1,20 @@
 <resources>
-    <string name="app_name">ระบบเช็คกิจกรรม</string>
-    <string name="welcome">ยินดีต้อนรับเข้าสู่ระบบ</string>
-    <string name="err_msg_name">โปรดกรอก รหัสนักศึกษา</string>
-    <string name="err_msg_password">โปรดกรอก รหัสผ่าน</string>
-    <string name="Profile_name">ชื่อ-สกุล</string>
-    <string name="Profile_student_ID">รหัสนักศึกษา</string>
-    <string name="Profile_Branch">สาขาวิชา</string>
-    <string name="Profile_faculty">คณะ</string>
-    
-    <string name="profile">กิจกรรมที่เข้าร่วม</string>
-    <string name="calendar">ปฏิทินกิจกรรม</string>
-    <string name="news">ข่าวประชาสัมพันธ์</string>
-    
-    
-    <string name="about">เกี่ยวกับ</string>
-    <string name="vertion">แอปพลิเคชันแจ้งเตือนกิจกรรม เวอร์ชั่น 1.0</string>
-    <string name="by">จัดทำโดย CSIT</string>
-    <string name="fb">www.facebook.com/csit56</string>
+<string name="app_name">ตรวจเช็คกิจกรรม</string>
+<string name="welcome">ยินดีต้อนรับเข้าสู่ระบบ</string>
+<string name="err_msg_name">โปรดกรอก รหัสนักศึกษา</string>
+<string name="err_msg_password">โปรดกรอก รหัสผ่าน</string>
+<string name="Profile_name">ชื่อ-สกุล</string>
+<string name="Profile_student_ID">รหัสนักศึกษา</string>
+<string name="Profile_Branch">สาขาวิชา</string>
+<string name="Profile_faculty">คณะ</string>
+
+<string name="profile">กิจกรรมที่เข้าร่วม</string>
+<string name="calendar">ปฏิทินกิจกรรม</string>
+<string name="news">ข่าวประชาสัมพันธ์</string>
+
+
+<string name="about">เกี่ยวกับ</string>
+<string name="vertion">แอปพลิเคชันแจ้งเตือนกิจกรรม เวอร์ชั่น 1.0</string>
+<string name="by">จัดทำโดย CSIT</string>
+<string name="fb">www.facebook.com/csit56</string>
 </resources>
