@@ -163,6 +163,8 @@ public class Login extends AppCompatActivity {
         private ProgressDialog pd;
         boolean con = false;
         String id = null;
+        String name = null;
+        String sername = null;
         private String message;
 
         @Override
@@ -187,6 +189,8 @@ public class Login extends AppCompatActivity {
                     for (int i=0; i < jArray.length() ; i++ ) {
                         JSONObject jObj = jArray.getJSONObject(i);
                         id = jObj.getString("user_id");
+                        name = jObj.getString("name");
+                        sername = jObj.getString("lname");
                     }// for
                     con = true;
                 }// if
@@ -213,9 +217,9 @@ public class Login extends AppCompatActivity {
             {
                 Intent i = new Intent(Login.this, Main.class);
                 startActivity(i);
-                // Toast toast = Toast.makeText(Login.this,"ยินดีต้อนรับคุณ"+id, Toast.LENGTH_SHORT);
-                // toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 210);
-                // toast.show();
+                 Toast toast = Toast.makeText(Login.this,"ยินดีต้อนรับคุณ "+name +" "+ sername, Toast.LENGTH_LONG);
+                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 210);
+                 toast.show();
             }
             else if (con == false){
                 MessageBox("การเชื่อมต่อผิดพลาด");
