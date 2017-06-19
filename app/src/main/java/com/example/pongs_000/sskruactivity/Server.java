@@ -4,6 +4,6 @@ public class Server {
 
     public String name()
     {
-        return "http://csit.itsisaket.com/activityv1/app/";
+        return "http://csit.itsisaket.com/activityv2/app/";
     }
 }

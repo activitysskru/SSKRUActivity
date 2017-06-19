@@ -152,7 +152,7 @@ public class Login extends AppCompatActivity {
                     validateUsername();
                     break;
                 case R.id.password:
-                    validatePassword();
+//                    validatePassword();
                     break;
             }
         }
