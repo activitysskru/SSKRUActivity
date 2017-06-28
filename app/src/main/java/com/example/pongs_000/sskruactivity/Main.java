@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by sonthaya-csit on 4/18/17.
@@ -21,6 +23,8 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        getSupportActionBar().setTitle(" ระบบตรวจเช็คกิจกรรม");
+        getSupportActionBar().setSubtitle(" ยินดีต้อนรับ");
 
         ImageView tonews = (ImageView) findViewById(R.id.button5);
         tonews.setOnClickListener(new View.OnClickListener() {
