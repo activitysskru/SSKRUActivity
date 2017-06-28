@@ -222,7 +222,7 @@ public class Login extends AppCompatActivity {
                 Intent i = new Intent(Login.this, Main.class);
                 startActivity(i);
                  Toast toast = Toast.makeText(Login.this,"ยินดีต้อนรับคุณ "+name +" "+ sername, Toast.LENGTH_LONG);
-                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 210);
+                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 610);
                 i.putExtra("fullname",name);
                 i.putExtra("username",sername);
                 toast.show();

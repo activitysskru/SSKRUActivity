@@ -23,8 +23,8 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        getSupportActionBar().setTitle(" ระบบตรวจเช็คกิจกรรม");
-        getSupportActionBar().setSubtitle(" ยินดีต้อนรับ");
+        getSupportActionBar().setTitle(" มหาวิทยาลัยราชภัฏศรีสะเกษ");
+        getSupportActionBar().setSubtitle(" ยินดีต้อนรับเข้าสู่ ระบบตรวจเช็คกิจกรรม");
 
         ImageView tonews = (ImageView) findViewById(R.id.button5);
         tonews.setOnClickListener(new View.OnClickListener() {
