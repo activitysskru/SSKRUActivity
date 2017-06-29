@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -29,6 +30,9 @@ public class News extends AppCompatActivity {
 
         getSupportActionBar().setTitle(" ข่าวประชาสัมพันธ์");
         getSupportActionBar().setSubtitle(" มหาวิทยาลัยราชภัฏศรีสะเกษ");
+
+        Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
         
         WebView myWebView = (WebView) findViewById(R.id.webview01);
         myWebView.setWebViewClient(new WebViewClient());

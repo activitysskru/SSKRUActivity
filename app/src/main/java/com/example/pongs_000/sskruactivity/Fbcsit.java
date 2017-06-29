@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
 
 /**
  * Created by IT03 on 29/6/2560.
@@ -16,6 +17,9 @@ public class Fbcsit extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+
+        Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
 
         Intent facebookIntent = getOpenFacebookIntent(this);
         startActivity(facebookIntent);

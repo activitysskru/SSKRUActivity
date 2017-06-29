@@ -40,8 +40,7 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
         </activity>
 
-        <activity android:name=".About"
-            android:label="@string/about">
+        <activity android:name=".About">
             <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Main"/>
         </activity>
 

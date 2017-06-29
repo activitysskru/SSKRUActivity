@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
@@ -21,6 +22,9 @@ public class About extends AppCompatActivity {
 
         getSupportActionBar().setTitle(" ทีมพัฒนา");
         getSupportActionBar().setSubtitle(" ระบบตรวจเช็คกิจกรรม");
+
+        Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
 
         TextView csit = (TextView)findViewById(R.id.csit56);
         csit.setOnClickListener(new View.OnClickListener() {

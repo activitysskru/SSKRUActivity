@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,10 @@ public class Login extends AppCompatActivity {
 
         getSupportActionBar().setTitle(" SSKRU ACTIVITY");
         getSupportActionBar().setSubtitle(" ลงชื่อเข้าใช้");
+
+        Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
+
 
         if( getIntent().getBooleanExtra("Exit me", false)){
             return;

@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,9 @@ public class Main extends AppCompatActivity {
 
         getSupportActionBar().setTitle(" มหาวิทยาลัยราชภัฏศรีสะเกษ");
         getSupportActionBar().setSubtitle(" ยินดีต้อนรับเข้าสู่ ระบบตรวจเช็คกิจกรรม");
+
+        Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
+        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
 
         ImageView tonews = (ImageView) findViewById(R.id.button5);
         tonews.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +74,7 @@ public class Main extends AppCompatActivity {
 
     public void onBackPressed() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("ออกจากแอป...");
+        dialog.setTitle("ออกจากแอป ?");
         dialog.setIcon(R.mipmap.ic_launcher);
         dialog.setCancelable(true);
         dialog.setMessage("ต้องการออกจากแอปพลิเคชัน หรือไม่  ?");
