@@ -6,23 +6,47 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_marginBottom="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/by"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:paddingBottom="5dp"/>
+        android:paddingBottom="5dp"
+        android:text="@string/by"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#e7e7e7"
+        android:padding="3dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="@string/csit"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="16dp"
         android:text="@string/vertion"
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/csit56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/fb"
-        android:layout_gravity="center"/>
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
