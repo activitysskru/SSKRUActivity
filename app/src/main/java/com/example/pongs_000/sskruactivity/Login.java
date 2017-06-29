@@ -1,5 +1,6 @@
 package com.example.pongs_000.sskruactivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -31,7 +32,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
 
     private EditText user, pass;
     private TextInputLayout inputLayoutUsername, inputLayoutPassword;
@@ -45,8 +46,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        getSupportActionBar().setTitle(" SSKRU ACTIVITY");
-        getSupportActionBar().setSubtitle(" ลงชื่อเข้าใช้");
+//        getSupportActionBar().setTitle(" SSKRU ACTIVITY");
+//        getSupportActionBar().setSubtitle(" ลงชื่อเข้าใช้");
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));

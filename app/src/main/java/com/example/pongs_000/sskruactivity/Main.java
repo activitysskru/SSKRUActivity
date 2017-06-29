@@ -1,5 +1,6 @@
 package com.example.pongs_000.sskruactivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,18 +18,24 @@ import android.widget.Toast;
  * Created by sonthaya-csit on 4/18/17.
  */
 
-public class Main extends AppCompatActivity {
+public class Main extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        getSupportActionBar().setTitle(" มหาวิทยาลัยราชภัฏศรีสะเกษ");
-        getSupportActionBar().setSubtitle(" ยินดีต้อนรับเข้าสู่ ระบบตรวจเช็คกิจกรรม");
-
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
+
+        Button back = (Button)findViewById(R.id.backmain);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+
+            }
+        });
 
         ImageView tonews = (ImageView) findViewById(R.id.button5);
         tonews.setOnClickListener(new View.OnClickListener() {
