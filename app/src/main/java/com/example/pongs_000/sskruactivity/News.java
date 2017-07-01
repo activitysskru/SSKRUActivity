@@ -31,8 +31,7 @@ public class News extends Activity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(News.this ,Main.class);
-                startActivity(intent);
+                finish();
             }
         });
 
