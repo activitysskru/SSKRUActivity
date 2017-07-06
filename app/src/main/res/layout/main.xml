@@ -34,48 +34,53 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-20dp">
+                    android:layout_marginBottom="-15dp"
+                    android:layout_marginTop="-15dp">
 
                     <ImageView
                         android:id="@+id/button5"
                         android:layout_width="fill_parent"
-                        android:layout_height="90dp"
+                        android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/ic_library_books_black_24dp"
+                        android:src="@drawable/button_new"
                         android:text="Home" />
 
                     <ImageView
                         android:id="@+id/button"
                         android:layout_width="fill_parent"
-                        android:layout_height="90dp"
+                        android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/ic_event_black_24dp"
+                        android:src="@drawable/button_calendar"
                         android:text="About" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp">
 
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/news"
+                        android:textSize="16dp"
                         android:layout_weight="1"
                         android:gravity="center"/>
 
                     <TextView android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/calendar"
+                        android:textSize="16dp"
                         android:layout_weight="1"
                         android:gravity="center"/>
                 </LinearLayout>
@@ -83,42 +88,45 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="25dp">
+                    android:layout_marginBottom="-15dp">
 
                     <ImageView
                         android:id="@+id/button6"
                         android:layout_width="fill_parent"
-                        android:layout_height="90dp"
+                        android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/ic_recent_actors_black_24dp"
+                        android:src="@drawable/button_act"
                         android:text="Home" />
 
                     <ImageView
                         android:id="@+id/button2"
                         android:layout_width="fill_parent"
-                        android:layout_height="90dp"
+                        android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/ic_info_black_24dp"
+                        android:src="@drawable/button_about"
                         android:text="About" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp">
 
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="16dp"
                         android:text="@string/profile"
                         android:layout_weight="1"
                         android:gravity="center"/>
 
                     <TextView android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:textSize="16dp"
                         android:text="@string/about"
                         android:layout_weight="1"
                         android:gravity="center"/>

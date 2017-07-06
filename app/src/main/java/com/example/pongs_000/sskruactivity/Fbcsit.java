@@ -1,5 +1,6 @@
 package com.example.pongs_000.sskruactivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,7 +12,7 @@ import android.view.ViewGroup;
  * Created by IT03 on 29/6/2560.
  */
 
-public class Fbcsit extends AppCompatActivity{
+public class Fbcsit extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
