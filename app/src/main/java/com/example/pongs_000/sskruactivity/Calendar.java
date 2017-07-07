@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 /**
@@ -28,6 +31,12 @@ public class Calendar extends Activity {
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
+
+        WebView myWebView = (WebView) findViewById(R.id.webview02);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("http://192.168.10.29/calendar_csit.php");
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
     }
 }

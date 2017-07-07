@@ -8,16 +8,14 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:background="@drawable/bg"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/textView6"
+        <WebView
+            android:id="@+id/webview02"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/calendar"
-            android:textSize="30sp" />
+            android:layout_height="match_parent" >
+        </WebView>
 
     </LinearLayout>
 
@@ -54,7 +52,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ปฏิทินกิจกรรม "
+                    android:text="ปฏิทินกองบริการ "
                     android:textColor="#ffff"
                     android:textSize="20dp" />
 

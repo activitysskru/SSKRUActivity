@@ -11,6 +11,7 @@
         android:paddingLeft="16dp"
         android:paddingBottom="16dp"
         android:paddingRight="16dp"
+        android:background="@drawable/bg"
         tools:context="com.example.pongs_000.sskruactivity.Login"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -30,6 +31,13 @@
                 android:text="@string/by"
                 android:textSize="22sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/csit"
+                android:layout_marginBottom="15dp"/>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
