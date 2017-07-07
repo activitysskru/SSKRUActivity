@@ -34,7 +34,7 @@ public class Calendar extends Activity {
 
         WebView myWebView = (WebView) findViewById(R.id.webview02);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://192.168.10.29/calendar_csit.php");
+        myWebView.loadUrl("http://csit.itsisaket.com/calendar_csit.php");
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 

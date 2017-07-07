@@ -66,14 +66,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_marginBottom="12dp">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_marginTop="-45dp">
+                    android:layout_marginTop="-20dp">
 
                     <ImageView
                         android:id="@+id/button5"
@@ -82,8 +80,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/button_new"
-                        android:text="Home" />
+                        android:src="@drawable/button_new" />
 
                     <ImageView
                         android:id="@+id/button"
@@ -92,8 +89,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="15dip"
-                        android:src="@drawable/button_calendar"
-                        android:text="About" />
+                        android:src="@drawable/button_calendar"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -104,22 +100,24 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="@string/news"
-                        android:textSize="16dp"
-                        android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:textSize="16dp" />
 
-                    <TextView android:layout_width="fill_parent"
+                    <TextView
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/calendar"
-                        android:textSize="16dp"
                         android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="@string/calendar"
+                        android:textSize="16dp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="-15dp">
 
                     <ImageView
@@ -138,7 +136,7 @@
                         android:layout_height="120dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:padding="15dip"
+                        android:padding="17dip"
                         android:src="@drawable/button_about"
                         android:text="About" />
                 </LinearLayout>
@@ -151,17 +149,18 @@
                     <TextView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="@string/profile"
-                        android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:textSize="16dp" />
 
-                    <TextView android:layout_width="fill_parent"
+                    <TextView
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="16dp"
-                        android:text="@string/about"
                         android:layout_weight="1"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="@string/about"
+                        android:textSize="16dp" />
                 </LinearLayout>
 
             </LinearLayout>
