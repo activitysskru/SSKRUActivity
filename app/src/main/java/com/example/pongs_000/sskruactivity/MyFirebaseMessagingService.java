@@ -7,11 +7,14 @@ import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import org.json.JSONException;
@@ -40,6 +43,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 String jsonMessage = data.getString("extra_information");
                 Log.d(TAG, "onMessageReceived: \n" +
                         "Extra Information: " +jsonMessage);
+                playNotificationSound();
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -47,10 +52,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getNotification() != null){
             String title = remoteMessage.getNotification().getTitle();//get title
             String message = remoteMessage.getNotification().getBody();//get message
+            String click_action = remoteMessage.getNotification().getClickAction();
 
             Log.d(TAG, "Message Notification Title: " + title);
             Log.d(TAG, "Message Notification Body: " + message);
-            showNotification(message , title);
+            Log.d(TAG, "Message Notification click_action: " + click_action);
+
+            showNotification(message , title , click_action);
         }
 
     }
@@ -60,54 +68,42 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
-    private void showNotification(String message , String title) {
+    private void showNotification(String message , String title, String click_action) {
         Intent i;
-
-        Uri alarmSound;
-//        Uri defaultSount = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-        if (!isAppIsInBackground(getApplicationContext())) {
-
-            alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
-                    + "://" + this.getPackageName() + "/raw/save_and_checkout");
-        }else{
-            alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        }
-
+            if (click_action.equals("MAINACTIVITY")){
+                i = new Intent(this, Main.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            }else if (click_action.equals("PROFILE_ACTIVITY")){
+                i = new Intent(this, ProfileActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            }else {
+                i = new Intent(this, Main.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            }
+            playNotificationSound();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setAutoCancel(true)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)
-                .setSound(alarmSound)
-                .setSmallIcon(R.mipmap.ic_launcher_round);
+                .setSmallIcon(R.mipmap.ic_launcher);
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(0,builder.build());
     }
 
-    public static boolean isAppIsInBackground(Context context) {
-        boolean isInBackground = true;
-        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
-            List<ActivityManager.RunningAppProcessInfo> runningProcesses = am.getRunningAppProcesses();
-            for (ActivityManager.RunningAppProcessInfo processInfo : runningProcesses) {
-                if (processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-                    for (String activeProcess : processInfo.pkgList) {
-                        if (activeProcess.equals(context.getPackageName())) {
-                            isInBackground = false;
-                        }
-                    }
-                }
-            }
-        } else {
-            List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
-            ComponentName componentInfo = taskInfo.get(0).topActivity;
-            if (componentInfo.getPackageName().equals(context.getPackageName())) {
-                isInBackground = false;
-            }
-        }
+    private void handleDataMessage(JSONObject json) {
 
-        return isInBackground;
+    }
+    // Playing notification sound
+    public void playNotificationSound() {
+        try {
+            Uri alarmSound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE
+                    + "://" + this.getPackageName() + "/raw/save_and_checkout");
+            Ringtone r = RingtoneManager.getRingtone(this, alarmSound);
+            r.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

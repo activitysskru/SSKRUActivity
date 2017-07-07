@@ -1,8 +1,10 @@
 package com.example.pongs_000.sskruactivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,18 +18,34 @@ import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import static com.example.pongs_000.sskruactivity.Login.MY_PREFS;
+
 /**
  * Created by sonthaya-csit on 4/18/17.
  */
 
 public class Main extends Activity {
 
+    String year, faculty;
+    SharedPreferences shared;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        shared = getSharedPreferences(MY_PREFS,
+                Context.MODE_PRIVATE);
+
+        year = shared.getString("username","");
+        faculty = shared.getString("faculty_id","");
+
+        String category = year.substring(0,2) + faculty;
+//        Toast.makeText(Main.this,category, Toast.LENGTH_SHORT).show();
+
+
         FirebaseMessaging.getInstance().subscribeToTopic("561");
+
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));

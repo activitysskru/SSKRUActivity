@@ -3,8 +3,10 @@ package com.example.pongs_000.sskruactivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +35,10 @@ import java.net.URL;
 import java.util.List;
 
 public class Login extends Activity {
+    public static final String MY_PREFS = "my_prefs";
+
+    SharedPreferences.Editor editor;
+
 
     private EditText user, pass;
     private TextInputLayout inputLayoutUsername, inputLayoutPassword;
@@ -51,6 +57,11 @@ public class Login extends Activity {
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
+
+        SharedPreferences shared = getSharedPreferences(MY_PREFS,
+                Context.MODE_PRIVATE);
+
+        editor = shared.edit();
 
 
         if( getIntent().getBooleanExtra("Exit me", false)){
@@ -172,9 +183,10 @@ public class Login extends Activity {
     {
         private ProgressDialog pd;
         boolean con = false;
-        String id = null;
+        String username = null;
         String name = null;
         String sername = null;
+        String prefix, faculty_id, department_name , faculty_name;
         private String message;
 
         @Override
@@ -198,9 +210,22 @@ public class Login extends Activity {
                     JSONArray jArray = new JSONArray(jString);
                     for (int i=0; i < jArray.length() ; i++ ) {
                         JSONObject jObj = jArray.getJSONObject(i);
-                        id = jObj.getString("user_id");
+                        username = jObj.getString("username");
                         name = jObj.getString("name");
                         sername = jObj.getString("lname");
+                        prefix = jObj.getString("prefix");
+                        faculty_id = jObj.getString("department_faculty_faculty_id");
+                        department_name = jObj.getString("department_name");
+                        faculty_name = jObj.getString("faculty_name");
+
+                        editor.putString("name",name);
+                        editor.putString("username",username);
+                        editor.putString("department_name",department_name);
+                        editor.putString("faculty_name",faculty_name);
+                        editor.putString("faculty_id",faculty_id);
+                        editor.commit();
+
+
                     }// for
                     con = true;
                 }// if
@@ -223,7 +248,7 @@ public class Login extends Activity {
         protected void onPostExecute(Void v)
         {
             pd.dismiss();
-            if(con!=false && id!=null)
+            if(con!=false && username!=null)
             {
                 Intent i = new Intent(Login.this, Main.class);
                 startActivity(i);
