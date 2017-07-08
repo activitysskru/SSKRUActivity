@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <RelativeLayout
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:orientation="vertical"
@@ -22,7 +21,7 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="200dp"
+                android:layout_height="fill_parent"
                 android:orientation="vertical">
 
                 <ImageView
@@ -60,107 +59,107 @@
                     android:padding="3dp"
                     android:layout_marginTop="15dp"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-20dp">
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/button5"
-                        android:layout_width="fill_parent"
-                        android:layout_height="120dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="15dip"
-                        android:src="@drawable/button_new" />
-
-                    <ImageView
-                        android:id="@+id/button"
-                        android:layout_width="fill_parent"
-                        android:layout_height="120dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="15dip"
-                        android:src="@drawable/button_calendar"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/news"
-                        android:textSize="16dp" />
+                        android:layout_marginTop="-20dp">
 
-                    <TextView
+                        <ImageView
+                            android:id="@+id/button5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="15dip"
+                            android:src="@drawable/button_new" />
+
+                        <ImageView
+                            android:id="@+id/button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="15dip"
+                            android:src="@drawable/button_calendar"/>
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/calendar"
-                        android:textSize="16dp" />
-                </LinearLayout>
+                        android:layout_marginTop="3dp">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="-15dp">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/news"
+                            android:textSize="16dp" />
 
-                    <ImageView
-                        android:id="@+id/button6"
-                        android:layout_width="fill_parent"
-                        android:layout_height="120dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="15dip"
-                        android:src="@drawable/button_act"
-                        android:text="Home" />
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/calendar"
+                            android:textSize="16dp" />
+                    </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/button2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="120dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:padding="17dip"
-                        android:src="@drawable/button_about"
-                        android:text="About" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/profile"
-                        android:textSize="16dp" />
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="-15dp">
 
-                    <TextView
+                        <ImageView
+                            android:id="@+id/button6"
+                            android:layout_width="fill_parent"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="15dip"
+                            android:src="@drawable/button_act"
+                            android:text="Home" />
+
+                        <ImageView
+                            android:id="@+id/button2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="17dip"
+                            android:src="@drawable/button_about"
+                            android:text="About" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="@string/about"
-                        android:textSize="16dp" />
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/profile"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/about"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>

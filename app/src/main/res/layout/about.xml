@@ -90,7 +90,7 @@
             android:background="?attr/colorPrimary">
 
             <LinearLayout
-                android:layout_width="40dp"
+                android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
@@ -98,9 +98,9 @@
 
                 <Button
                     android:id="@+id/backmainabout"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@drawable/ic_arrow_back_white_24dp" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/button_back" />
 
             </LinearLayout>
 

@@ -328,7 +328,7 @@ public class Login extends Activity {
     public void onBackPressed() {
         android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
         dialog.setTitle("ออกจากแอป...");
-        dialog.setIcon(R.mipmap.ic_launcher);
+        dialog.setIcon(R.drawable.out_icon);
         dialog.setCancelable(true);
         dialog.setMessage("ต้องการออกจากแอปพลิเคชัน หรือไม่  ?");
         dialog.setPositiveButton("ใช่", new DialogInterface.OnClickListener() {
