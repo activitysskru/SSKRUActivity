@@ -35,6 +35,7 @@ import java.net.URL;
 import java.util.List;
 
 public class Login extends Activity {
+
     public static final String MY_PREFS = "my_prefs";
 
     SharedPreferences.Editor editor;
@@ -186,7 +187,7 @@ public class Login extends Activity {
         String username = null;
         String name = null;
         String sername = null;
-        String prefix, faculty_id, department_name , faculty_name;
+        String prefix, faculty_id, department_name , faculty_name , depatment_id;
         private String message;
 
         @Override
@@ -217,12 +218,16 @@ public class Login extends Activity {
                         faculty_id = jObj.getString("department_faculty_faculty_id");
                         department_name = jObj.getString("department_name");
                         faculty_name = jObj.getString("faculty_name");
+                        depatment_id = jObj.getString("department_id");
 
+                        editor.putString("prefix",prefix);
                         editor.putString("name",name);
                         editor.putString("username",username);
+                        editor.putString("sername" , sername);
                         editor.putString("department_name",department_name);
                         editor.putString("faculty_name",faculty_name);
                         editor.putString("faculty_id",faculty_id);
+                        editor.putString("depatment_id",depatment_id);
                         editor.commit();
 
 

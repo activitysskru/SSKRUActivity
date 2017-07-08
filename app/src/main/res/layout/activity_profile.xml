@@ -18,10 +18,9 @@
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:padding="10dp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="0dp">
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -30,7 +29,8 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginBottom="7dp">
+                    android:layout_marginBottom="7dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:id="@+id/name"
@@ -75,11 +75,11 @@
                         android:text="กิจกรรมกลาง"
                         android:textStyle="bold"/>
 
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="10dp"
-                        tools:listitem = "@layout/item_profile"/>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/lscen"
+                         />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -88,11 +88,11 @@
                         android:text="กิจกรรมคณะ"
                         android:textStyle="bold"/>
 
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="10dp"
-                        tools:listitem = "@layout/item_profile"/>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/lsfac"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -101,11 +101,11 @@
                         android:text="กิจกรรมชมรม"
                         android:textStyle="bold"/>
 
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginTop="10dp"
-                        tools:listitem = "@layout/item_profile"/>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/lsclub"
+                        />
 
                 </LinearLayout>
 
@@ -161,8 +161,6 @@
                     android:textSize="16dp" />
 
             </LinearLayout>
-
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>

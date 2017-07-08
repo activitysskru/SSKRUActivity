@@ -26,7 +26,7 @@ import static com.example.pongs_000.sskruactivity.Login.MY_PREFS;
 
 public class Main extends Activity {
 
-    String year, faculty;
+    String year, faculty , department;
     SharedPreferences shared;
 
     @Override
@@ -39,12 +39,13 @@ public class Main extends Activity {
 
         year = shared.getString("username","");
         faculty = shared.getString("faculty_id","");
+        department = shared.getString("depatment_id","");
 
-        String category = year.substring(0,2) + faculty;
-//        Toast.makeText(Main.this,category, Toast.LENGTH_SHORT).show();
+        String category = year.substring(0,3) + faculty + department;
+        Toast.makeText(Main.this,category, Toast.LENGTH_LONG).show();
 
 
-        FirebaseMessaging.getInstance().subscribeToTopic("561");
+        FirebaseMessaging.getInstance().subscribeToTopic(category);
 
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");

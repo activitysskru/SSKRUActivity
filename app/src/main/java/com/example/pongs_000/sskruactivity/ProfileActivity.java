@@ -40,23 +40,14 @@ public class ProfileActivity extends Activity {
         faculty = (TextView) findViewById(R.id.faculty);
 
 
-       shared = getSharedPreferences(MY_PREFS,
-                Context.MODE_PRIVATE);
-
+       shared = getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
         setValue();
     }
 
     private void setValue() {
-
-//        editor.putString("username",username);
-//        editor.putString("department_name",department_name);
-//        editor.putString("faculty_name",faculty_name);
-//        editor.putString("faculty_id",faculty_id);
-
-        name.setText(shared.getString("name",""));
-        stdid.setText(shared.getString("username",""));
+        name.setText("ชื่อ " + shared.getString("prefix","") + shared.getString("name","") + "  "+shared.getString("sername",""));
+        stdid.setText("รหัสนักศึกษา " + shared.getString("username",""));
         department.setText(shared.getString("department_name",""));
         faculty.setText(shared.getString("faculty_name",""));
-
     }
 }
