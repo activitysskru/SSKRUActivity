@@ -6,26 +6,28 @@
     android:orientation="horizontal"
     android:weightSum="1">
 
+
     <TextView
         android:id="@+id/tvdate"
         android:layout_margin="3dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="วันที่"
-        android:layout_weight="0.40" />
+        android:layout_weight="0.23" />
 
     <TextView
         android:id="@+id/tvact"
-        android:layout_margin="3dp"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="กิจกรรม"
-        android:layout_weight="0.58" />
+        android:layout_margin="3dp"
+        android:layout_weight="0.56"
+        android:text="กิจกรรม" />
 
     <TextView
         android:id="@+id/tvstatus"
         android:layout_margin="3dp"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="0.20"
         android:layout_height="wrap_content"
         android:text="ผลกิจกรรม" />
 </LinearLayout>
