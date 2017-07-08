@@ -105,7 +105,7 @@ public class Main extends Activity {
     public void onBackPressed() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("ออกจากแอป ?");
-        dialog.setIcon(R.mipmap.ic_launcher);
+        dialog.setIcon(R.drawable.out_icon);
         dialog.setCancelable(true);
         dialog.setMessage("ต้องการออกจากแอปพลิเคชัน หรือไม่  ?");
         dialog.setPositiveButton("ใช่", new DialogInterface.OnClickListener() {
