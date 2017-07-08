@@ -36,7 +36,7 @@
                         android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:textSize="14dp"
                         tools:text="@string/Profile_name" />
 
                     <TextView
@@ -44,28 +44,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/Profile_student_ID"
-                        android:textSize="18sp" />
+                        android:textSize="14dp" />
 
                     <TextView
                         android:id="@+id/Branch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/Profile_Branch"
-                        android:textSize="18sp" />
+                        android:textSize="14dp" />
 
                     <TextView
                         android:id="@+id/faculty"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/Profile_faculty"
-                        android:textSize="18sp" />
+                        android:textSize="14dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="ตารางกิจกรรม"
-                        android:textSize="18sp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -129,8 +129,8 @@
             <LinearLayout
                 android:layout_width="55dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
+                android:padding="5dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -151,14 +151,14 @@
                     android:layout_height="wrap_content"
                     android:text="กิจกรรมที่เข้าร่วม "
                     android:textColor="#ffff"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ระบบตรวจเช็คกิจกรรม"
                     android:textColor="#ffff"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
