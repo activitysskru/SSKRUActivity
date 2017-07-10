@@ -46,6 +46,7 @@ public class Main extends Activity {
 
 
         FirebaseMessaging.getInstance().subscribeToTopic(category);
+        FirebaseMessaging.getInstance().subscribeToTopic("GLOBAL");
 
 
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");

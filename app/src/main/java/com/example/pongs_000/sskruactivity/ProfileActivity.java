@@ -37,8 +37,9 @@ public class ProfileActivity extends Activity {
     TextView name, stdid, department, faculty;
     SharedPreferences shared;
     ArrayList<HashMap<String, String>> MyArrList;
+    ArrayList<HashMap<String, String>> MyArrListFac;
 
-    ListView actclub;
+    ListView actclub,actfac;
     ProgressDialog progress;
 
     private static String Server = new Server().name();
@@ -66,7 +67,9 @@ public class ProfileActivity extends Activity {
        shared = getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
 
         actclub = (ListView) findViewById(R.id.lsclub);
+        actfac = (ListView) findViewById(R.id.lsfac);
         getActclub();
+//        getActFac();
 
 
 
@@ -127,6 +130,76 @@ public class ProfileActivity extends Activity {
                     sAdap = new SimpleAdapter(ProfileActivity.this, MyArrList, R.layout.profile_item,
                             new String[] {"time_start", "activity_name", "status"}, new int[] {R.id.tvdate, R.id.tvact, R.id.tvstatus});
                     actclub.setAdapter(sAdap);
+
+                } catch (UnsupportedEncodingException e1) {
+                    e1.printStackTrace();
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onStart() {
+                super.onStart();
+                progress = ProgressDialog.show(ProfileActivity.this, "กำลังประมวลผล",
+                        "รอสักครู่...กำลังโหลดข้อมูล", true);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
+    public void getActFac() {
+        RequestParams params = new RequestParams();
+        params.put("username",shared.getString("username",""));
+        params.put("faculty_id",shared.getString("faculty_name",""));
+        params.put("department_id",shared.getString("department_id",""));
+
+
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post(Server+"get_fac_act.php", params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                String result2 = null;
+                try {
+                    MyArrListFac = new ArrayList<HashMap<String, String>>();
+                    HashMap<String, String> map;
+                    result2 = new String(responseBody, "UTF-8");
+                    //Log.d("Check",result);
+                    //content is json response that can be parsed.
+
+                    if(result2.equals("0"))
+                    {
+                        //lang = "ไม่มีคำศัพท์";
+                        Log.d("Check","ไม่มีข้อมูลกิจกรรม");
+//                        Toast.makeText(ProfileActivity.this, "ไม่มีข้อมูลกิจกรรม", Toast.LENGTH_SHORT).show();
+                    }else{
+                        JSONArray readerArray = new JSONArray(result2);
+                        //JSONObject obj = (JSONObject) readerArray.get(0);
+                        //Log.d("Check",obj.getString("Translation"));
+                        //lang = obj.getString("Translation");
+
+                        for(int i = 0; i < readerArray.length(); i++){
+                            JSONObject obj = readerArray.getJSONObject(i);
+                            map = new HashMap<String, String>();
+                            map.put("time_start",obj.getString("time_start"));
+                            map.put("activity_name",obj.getString("activity_name"));
+                            map.put("status","-");
+                            MyArrListFac.add(map);
+                        }
+                    }
+
+
+                    progress.dismiss();
+                    SimpleAdapter sAdap;
+                    sAdap = new SimpleAdapter(ProfileActivity.this, MyArrListFac, R.layout.profile_item,
+                            new String[] {"time_start", "activity_name", "status"}, new int[] {R.id.tvdate, R.id.tvact, R.id.tvstatus});
+                    actfac.setAdapter(sAdap);
 
                 } catch (UnsupportedEncodingException e1) {
                     e1.printStackTrace();
