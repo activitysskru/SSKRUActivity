@@ -17,16 +17,19 @@
             android:background="?attr/colorPrimary">
 
             <LinearLayout
-                android:layout_width="40dp"
+                android:layout_width="55dp"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/ripple_effect">
 
-                <Button
+                <ImageView
                     android:id="@+id/backmain"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/ic_no_encryption_white_24dp" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_no_encryption_white_24dp"
+                    android:background="@drawable/ripple_effect"/>
 
             </LinearLayout>
 
@@ -122,14 +125,18 @@
                         android:layout_height="80dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:src="@drawable/button_new" />
+                        android:padding="5dp"
+                        android:src="@drawable/button_new"
+                        android:background="@drawable/ripple_effect"/>
 
                     <ImageView
                         android:id="@+id/button"
                         android:layout_width="fill_parent"
                         android:layout_height="80dp"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:gravity="center"
+                        android:background="@drawable/ripple_effect"
                         android:src="@drawable/button_calendar" />
                 </LinearLayout>
 
@@ -166,6 +173,8 @@
                         android:layout_height="80dp"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:padding="5dp"
+                        android:background="@drawable/ripple_effect"
                         android:src="@drawable/button_act"
                         android:text="Home" />
 
@@ -174,7 +183,9 @@
                         android:layout_width="fill_parent"
                         android:layout_height="80dp"
                         android:layout_weight="1"
+                        android:padding="5dp"
                         android:gravity="center"
+                        android:background="@drawable/ripple_effect"
                         android:src="@drawable/button_about"
                         android:text="About" />
                 </LinearLayout>

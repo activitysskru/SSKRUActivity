@@ -36,11 +36,13 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/backmaincalendar"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/button_back" />
+                    android:padding="5dp"
+                    android:background="@drawable/ripple_effect"
+                    android:src="@drawable/button_back" />
 
             </LinearLayout>
 
@@ -54,14 +56,14 @@
                     android:layout_height="wrap_content"
                     android:text="ปฏิทินกองบริการ "
                     android:textColor="#ffff"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ระบบตรวจเช็คกิจกรรม"
                     android:textColor="#ffff"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 

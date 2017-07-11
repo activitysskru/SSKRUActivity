@@ -9,6 +9,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * Created by sonthaya-csit on 4/18/17.
@@ -21,7 +22,7 @@ public class Calendar extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
 
-        Button back = (Button)findViewById(R.id.backmaincalendar);
+        ImageView back = (ImageView)findViewById(R.id.backmaincalendar);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,7 +52,7 @@ public class Main extends Activity {
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
 
-        Button back = (Button)findViewById(R.id.backmain);
+        ImageView back = (ImageView)findViewById(R.id.backmain);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

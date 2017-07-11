@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -27,7 +28,7 @@ public class News extends Activity {
         Font fontChanger = new Font(getAssets(), "Itim-Regular.ttf");
         fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
 
-        Button back = (Button)findViewById(R.id.backnew);
+        ImageView back = (ImageView)findViewById(R.id.backnew);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

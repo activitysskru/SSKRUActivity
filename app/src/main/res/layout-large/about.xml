@@ -98,11 +98,12 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/backmainabout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/button_back" />
+                    android:background="@drawable/ripple_effect"
+                    android:src="@drawable/button_back" />
 
             </LinearLayout>
 

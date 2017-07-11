@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -24,7 +25,7 @@ public class About extends Activity {
 
 //        getSupportActionBar().setTitle(" ทีมพัฒนา");
 //        getSupportActionBar().setSubtitle(" ระบบตรวจเช็คกิจกรรม");
-        Button back = (Button)findViewById(R.id.backmainabout);
+        ImageView back = (ImageView)findViewById(R.id.backmainabout);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -29,12 +29,12 @@
                 android:layout_gravity="center"
                 android:paddingBottom="5dp"
                 android:text="@string/by"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="110dp"
                 android:src="@drawable/csit"
                 android:layout_marginBottom="15dp"/>
 
@@ -52,13 +52,13 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/csit"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:text="@string/vertion"
                 android:layout_gravity="center"/>
 
@@ -69,7 +69,7 @@
                 android:layout_gravity="center"
                 android:text="@string/fb"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 
@@ -90,17 +90,18 @@
             android:background="?attr/colorPrimary">
 
             <LinearLayout
-                android:layout_width="55dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/backmainabout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/button_back" />
+                    android:padding="5dp"
+                    android:background="@drawable/ripple_effect"
+                    android:src="@drawable/button_back" />
 
             </LinearLayout>
 
@@ -114,14 +115,14 @@
                     android:layout_height="wrap_content"
                     android:text="ทีมพัฒนา "
                     android:textColor="#ffff"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ระบบตรวจเช็คกิจกรรม"
                     android:textColor="#ffff"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 

@@ -23,11 +23,13 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/backnew"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/button_back" />
+                    android:padding="5dp"
+                    android:background="@drawable/ripple_effect"
+                    android:src="@drawable/button_back" />
 
             </LinearLayout>
 
@@ -41,14 +43,14 @@
                     android:layout_height="wrap_content"
                     android:text="ข่าวประชาสัมพันธ์"
                     android:textColor="#ffff"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="มหาวิทยาลัยราชภัฏศรีสะเกษ"
                     android:textColor="#ffff"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
