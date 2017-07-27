@@ -119,14 +119,15 @@
                     android:layout_marginTop="15dp">
 
                     <ImageView
-                        android:id="@+id/button5"
+                        android:id="@+id/button6"
                         android:layout_width="fill_parent"
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
                         android:background="@drawable/ripple_effect"
-                        android:src="@drawable/button_new" />
+                        android:src="@drawable/button_act"
+                        android:text="Home" />
 
                     <ImageView
                         android:id="@+id/button"
@@ -149,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/news"
+                        android:text="@string/profile"
                         android:textSize="12dp" />
 
                     <TextView
@@ -167,15 +168,14 @@
                     android:layout_marginTop="40dp">
 
                     <ImageView
-                        android:id="@+id/button6"
+                        android:id="@+id/button5"
                         android:layout_width="fill_parent"
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
                         android:background="@drawable/ripple_effect"
-                        android:src="@drawable/button_act"
-                        android:text="Home" />
+                        android:src="@drawable/button_new" />
 
                     <ImageView
                         android:id="@+id/button2"
@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/profile"
+                        android:text="@string/news"
                         android:textSize="12dp" />
 
                     <TextView
