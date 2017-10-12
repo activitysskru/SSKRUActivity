@@ -42,7 +42,7 @@ public class Main extends Activity {
         department = shared.getString("depatment_id","");
 
         String category = year.substring(0,3) + faculty + department;
-        Toast.makeText(Main.this,category, Toast.LENGTH_LONG).show();
+//        Toast.makeText(Main.this,category, Toast.LENGTH_LONG).show();
 
 
         FirebaseMessaging.getInstance().subscribeToTopic(category);
